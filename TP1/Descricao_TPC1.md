@@ -36,7 +36,7 @@
 - **Output:** True
 
 ## 8. count_ocorrences()
-**Descrição:** Conta quantas vezes uma string aparece dentro de outra, ignorando maiúsculas/minúsculas.
+**Descrição:** Conta quantas vezes uma string aparece dentro de outra.
 - **Input:** "bAnana", "bananabanaNabananaBananabanana"
 - **Output:** 5
 
