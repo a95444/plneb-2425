@@ -65,7 +65,7 @@
 
 ## 9. underscores()
 **Descrição:** Substitui todos os espaços numa string por *underscores*. Se aparecerem vários espaços seguidos, devem ser substituídos por apenas um *underscore*.
-- **Input:** ["teste 12345 0", "-123  45 palavra", "novo teste  12345"]
+- **Input:** ["teste 12345 0", "-123   45 palavra", "novo teste  12345"]
 - **Output:** "teste_12345_0", "-123_45_palavra", "novo_teste_12345"
 
 ## 10. codigo_postais()
