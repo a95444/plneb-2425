@@ -18,7 +18,7 @@
 ## 1.4 hello_yep()
 **Descrição:** Pesquisa por todas as ocorrências da palavra "hello" dentro da linha, substituindo cada uma por "*YEP*".
 - **Input:** "Hello there! Uh, hi, hello, it's me... Heyyy, hello? HELLO!"
-- **Output:** "*YEP* there! Uh, hi, *YEP*, it's me... Heyyy, *YEP*? *YEP*!"
+- **Output:** "*YEP* there! Uh, hi, *YEP*, it's me... Heyyy, \*YEP\*? \*YEP\*!"
 
 ## 1.5 split_function()
 **Descrição:** Pesquisa por todas as ocorrências do caracter vírgula, separando cada parte da linha por esse caracter.
