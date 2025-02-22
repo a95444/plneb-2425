@@ -54,7 +54,7 @@
 - **Output:** Pronomes detetados: ['Eu ', 'tu ', ' ele ', ' Ela ', ' nós', ' Vós', ' eles ', ' elas ']
 
 ## 7. variavel_valida()
-**Descrição:** Recebe uma string e determina se a mesma é um nome válido para uma variável, ou seja, se começa por uma letra e apenas contém letras, números ou *underscores*.
+**Descrição:** Recebe uma string e determina se a mesma é um nome válido para uma variável, ou seja, se começa por uma letra e apenas contém letras, números ou *underscores*. Retorna True se a variavel for válida, e False caso contrário.
 - **Input:** ["tentativa variavel", "variavel_12345", "var!!123", "123var!!123", "123var123"]
 - **Output:** False, True, False, False, False
 
