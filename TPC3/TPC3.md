@@ -1,5 +1,5 @@
 
-# Geração de um Dicionário de Termos Médicos a partir de um Ficheiro TXT
+# TPC3 - André Sousa
 
 ## Introdução
 
@@ -9,7 +9,7 @@ Este documento explica o processo utilizado para gerar um dicionário de termos 
 
 ### 1. Leitura do Ficheiro
 
-O primeiro passo foi abrir e ler o conteúdo do ficheiro `dic_med.txt`.
+O primeiro passo foi abrir e ler o conteúdo de um ficheiro '.txt' com as informações a serem apresentadas no dicionário.
 
 ```python
 with open("dic_med.txt", "r", encoding="utf-8") as file:
@@ -18,7 +18,8 @@ with open("dic_med.txt", "r", encoding="utf-8") as file:
 
 ### 2. Tratamento das Descrições
 
-O texto original apresentava algumas inconsistências, como quebras de linha e quebras de página (`\f`) antes de algumas descrições. Para limpar isso, foi utilizada a seguinte expressão regular:
+Através de uma análise inicial do texto capturado pelo método anterior, foi possível identificar incoerências, pois inicialmente havia-se considerado que antes de uma designação existe sempre `\n\n` o que permitiria diferencia-la de uma descrição, contudo no meio de descrições foram também detetados `\n\n`, bem como `\f`.
+Logo foi crucial tratar o conteúdo das descrições para permitir uma clara distinção entre os diferentes tipos de conteúdo. Para isso foi utilizada a seguinte expressão regular:
 
 ```python
 texto = re.sub(r'\n{1,2}\f([a-zA-ZÀ-ÖØ-öø-ÿ|\d]+(.+\n?.+){1,2}\.\n)', r'\g<1>', texto)
@@ -27,12 +28,12 @@ texto = re.sub(r'\n{1,2}\f([a-zA-ZÀ-ÖØ-öø-ÿ|\d]+(.+\n?.+){1,2}\.\n)', r'\g
 #### Explicação Detalhada da Expressão Regular:
 
 1. `\n{1,2}` - Captura entre uma e duas quebras de linha que aparecem antes de uma quebra de página.
-2. `\f` - Detecta a quebra de página, que indica uma possível separação errada dentro do texto.
-3. `([a-zA-ZÀ-ÖØ-öø-ÿ|\d]+(.+\n?.+){1,2}\.\n)`:
-   - `[a-zA-ZÀ-ÖØ-öø-ÿ|\d]+` - Captura a primeira palavra da descrição, que pode ser um termo médico composto por letras ou números.
-   - `(.+\n?.+){1,2}` - Garante que a descrição tenha pelo menos uma frase completa, permitindo até duas linhas para capturar textos que se estendem por múltiplas linhas.
-   - `\.\n` - Garante que o trecho capturado termina com um ponto final seguido de uma quebra de linha, assegurando que a descrição esteja completa.
-4. `\g<1>` - Substitui toda a correspondência apenas pelo grupo capturado, eliminando as quebras de linha extras antes da descrição e preservando o conteúdo correto.
+2. `\f` - Detecta a quebra de página, que indica uma possível separação errada dentro do texto da descrição.
+3. `([a-zA-ZÀ-ÖØ-öø-ÿ|\d]+(.+\n?.+){1,2}\.\n)` - Grupo de captura, que guarda o conteúdo de uma descrição: 
+   - `[a-zA-ZÀ-ÖØ-öø-ÿ|\d]+` - Deteta o início da descrição capturando a primeira palavra da mesma.
+   - `(.+\n?.+){1,2}` - Foi detetado que dentro de algumas descrições existiam quebras de texto, o que influenciava negativamente o resultado pretendido. Logo isto garante que mesmo que existam quebras de texto no meio do texto (no máximo duas), a descrição continuará a ser capturada.
+   - `\.\n` - A principal diferença entre uma designação e uma descrição é que a descrição termina com um ponto final seguido de uma quebra de linha. Isto assegura que o que está a ser capturado é efetivamente uma descrição.
+4. `\g<1>` - Substitui toda a correspondência apenas pelo grupo capturado, eliminando as quebras de linha e de página indesejadas antes da descrição preservando o conteúdo correto.
 
 Este passo permitiu:
 
@@ -58,13 +59,13 @@ texto = re.sub(r"\n\n", "\n\n@", texto, 0)
 
 ### 5. Extração e Limpeza das Descrições
 
-Após a marcação das designações, os conceitos foram extraídos utilizando expressões regulares:
+Após a marcação das designações, os conceitos foram extraídos utilizando expressões regulares que detetam as marcas acrescentadas:
 
 ```python
 conceitos_raw = re.findall(r"@(.*)\n([^@]*)", texto)
 ```
 
-Para garantir que as descrições estivessem limpas, foi criada a função:
+Para garantir que as descrições não contêem quebras de linha no seu meio, foi criada a seguinte função para as substituir por apenas 1 espaço:
 
 ```python
 def limpa_descricao(descricao):
@@ -73,9 +74,12 @@ def limpa_descricao(descricao):
     return descricao
 ```
 
-Os conceitos foram então processados para criar uma lista de tuplos contendo a designação e a descrição formatada:
+Os conceitos foram então processados para criar uma lista de tuplos que contem a designação e a descrição formatada:
 
 ```python
 conceitos = [(designacao, limpa_descricao(descricao)) for designacao, descricao in conceitos_raw]
 ```
 
+### 6. Gerar a página HTML com o dicionário de termos médicos
+
+Por fim, estes conceitos foram utilizados para gerar uma página HTML que permite representar a informação de forma clara e interpretável.
