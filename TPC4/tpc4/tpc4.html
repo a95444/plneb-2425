@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- permite que app seja mobile friendly-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Contima</title>
+
+</head>
+
+<body class="bg-stone-50 flex flex-col min-h-screen">
+
+ <!-- <div class="px-6 py-4 bg-cyan-950">
+        <h3 class="text-white">Contima Web application</h3>
+    </div>-->
+    <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50 border-cyan-500">
+        <nav class="py-4 px-6 flex justify-between items-center border-b border-cyan-500 bg-stone-50">
+            <a href="/" class=""> <img src="images/logo3.png" alt="Contimapp" width="185" height="155"></a> <!-- logo-->
+            <!--<h3 class="text-black font-semibold">Contima Web Application</h3>-->
+            <div class="space-x-6"> <!-- simbolos à direita, isto vai espaçar automaticamente as cenas que se meter-->
+                    <a href="#" class="text-md !text-black-800 py-1 px-4 border-5 border-cyan-800 rounded-lg bg-cyan-400 font-semibold hover:bg-cyan-500">Criar Conta</a>
+                    <a href="#" class="text-md !text-black-800 py-1 px-4 border-5 border-cyan-800 rounded-lg bg-cyan-400 font-semibold hover:bg-cyan-500">Log in</a>
+            </div>
+        </nav>
+    </header>
+    <!-- navigation bar, tem uma border em baixo, com uma thickenss de 200 e é cizenta,-->
+
+    <div class="flex-grow">
+
+
+                <div class="w-full overflow-hidden">
+            <img src="images/8.png" alt="Imagem" class="w-full h-auto object-cover">
+        </div>
+
+
+        <div class="mt-6 mb-20 px-6">
+    <div class="flex items-center justify-center w-full mb-10">
+        <div class="text-center">
+            <h1 class="font-semibold text-2xl mt-4 mb-2">Notícias</h1>
+            <div class="w-24 h-1 mx-auto bg-cyan-500 rounded-xl"></div>
+        </div>
+    </div>
+
+    <div class="container justify-center mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8 place-items-center">
+                <!-- Notícia 1 -->
+        <a href="https://www.idealista.pt/news/" class="bg-white rounded-lg shadow-md border-2 border-cyan-800 flex flex-col w-120">
+            <div class="h-40 w-full">
+                <img src="images/noticia1.jpg" alt="Notícia 1" class="w-full h-full rounded-lg object-cover border-b-2 border-cyan-800">
+            </div>
+            <div class="p-4">
+                <h2 class="font-semibold text-lg">Rendas das casas em Portugal abrandam subida em fevereiro para 3,9%</h2>
+                <p class="text-gray-700">
+                    As rendas das casas em Portugal registaram um abrandamento no seu crescimento em fevereiro, com uma subida de 3,9%. No entanto, em cidades como Évora, Faro e Funchal, o custo de arrendar casa aumentou significativamente no mesmo período.
+                </p>
+            </div>
+        </a>
+
+        <!-- Notícia 2 -->
+        <a href="https://www.igcp.pt/pt/noticias/taxa-de-juro-bruta-para-novas-subscricoes-de-certificados-de-aforro-serie-f-em-marco-de" class="bg-white rounded-lg shadow-md border-2 border-cyan-800 flex flex-col w-120">
+            <div class="h-40 w-full">
+                <img src="images/noticia2.jpg" alt="Notícia 2" class="w-full h-full rounded-lg object-cover border-b-2 border-cyan-800">
+            </div>
+            <div class="p-4">
+                <h2 class="font-semibold text-lg">Taxa de juro para Certificados de Aforro fixada em 2,5% em março</h2>
+                <p class="text-gray-700">
+                    A taxa de juro bruta para novas subscrições de Certificados de Aforro, Série F, foi fixada em 2,5% para março de 2025, conforme anunciado pelo IGCP. Esta atualização visa ajustar as condições de poupança oferecidas aos investidores.
+                </p>
+            </div>
+        </a>
+
+        <!-- Notícia 3 -->
+        <a href="https://noticias.casayes.pt/quase-60-municipios-prolongaram-isencao-do-imi-por-mais-2-anos/" class="bg-white rounded-lg shadow-md border-2 border-cyan-800 flex flex-col w-120">
+            <div class="h-40 w-full">
+                <img src="images/noticia7.jpg" alt="Notícia 3" class="w-full h-full rounded-lg object-cover border-b-2 border-cyan-800">
+            </div>
+            <div class="p-4">
+                <h2 class="font-semibold text-lg">Quase 60 municípios prolongam isenção do IMI por mais 2 anos</h2>
+                <p class="text-gray-700">
+                    Aproximadamente 60 municípios em Portugal decidiram prolongar a isenção do Imposto Municipal sobre Imóveis (IMI) por mais dois anos, beneficiando proprietários de habitação própria e permanente com valor patrimonial até 125 mil euros e rendimentos anuais até 153.300 euros.
+                </p>
+            </div>
+        </a>
+
+        <!-- Notícia 4 -->
+        <a href="https://www.jornaldenegocios.pt/empresas/imobiliario" class="bg-white rounded-lg shadow-md border-2 border-cyan-800 flex flex-col w-120">
+            <div class="h-40 w-full">
+                <img src="images/noticia4.jpg" alt="Notícia 4" class="w-full h-full rounded-lg object-cover border-b-2 border-cyan-800">
+            </div>
+            <div class="p-4">
+                <h2 class="font-semibold text-lg">Investimento belga em nova torre residencial em Gaia</h2>
+                <p class="text-gray-700">
+                    Investidores belgas estão a construir uma nova torre de habitação em Vila Nova de Gaia, com apartamentos de 110 m² a custar 485 mil euros. Este empreendimento destaca-se no mercado imobiliário europeu pela sua arquitetura moderna e localização privilegiada.
+                </p>
+            </div>
+        </a>
+
+        <!-- Notícia 5 -->
+        <a href="https://www.deco.proteste.pt/dinheiro/impostos/noticias/certificados-depositos-declarar-juros-irs" class="bg-white rounded-lg shadow-md border-2 border-cyan-800 flex flex-col w-120">
+            <div class="h-40 w-full">
+                <img src="images/noticia5.jpg" alt="Notícia 5" class="w-full h-full rounded-lg object-cover border-b-2 border-cyan-800">
+            </div>
+            <div class="p-4">
+                <h2 class="font-semibold text-lg">Esclarecimentos sobre declaração de juros de certificados e depósitos no IRS</h2>
+                <p class="text-gray-700">
+                    A DECO PROteste esclarece que, a partir deste ano, já não é necessário declarar rendimentos de capitais superiores a 500 euros no IRS. Esta alteração simplifica o processo de declaração para os contribuintes com certificados de aforro ou depósitos a prazo.
+                </p>
+            </div>
+        </a>
+
+        <!-- Notícia 6 -->
+        <a href="https://www.portugal.gov.pt/pt/gc24/comunicacao/noticia?i=nova-lei-dos-solos-mais-habitacao-acessivel-menos-especulacao" class="bg-white rounded-lg shadow-md border-2 border-cyan-800 flex flex-col w-120">
+            <div class="h-40 w-full">
+                <img src="images/noticia6.jpg" alt="Notícia 6" class="w-full h-full rounded-lg object-cover border-b-2 border-cyan-800">
+            </div>
+            <div class="p-4">
+                <h2 class="font-semibold text-lg">Governo português permitirá construção em solo rústico para aumentar oferta habitacional</h2>
+                <p class="text-gray-700">
+                    O governo de Portugal aprovou uma lei que permitirá a construção de habitações em solos rústicos, visando aumentar a oferta de casas a preços acessíveis. A medida tem gerado controvérsia, com críticas de especialistas e partidos de esquerda sobre possíveis impactos ambientais e especulação imobiliária.
+                </p>
+            </div>
+        </a>
+
+
+
+            </div>
+        </div>
+
+
+    <!-- Indicador de Página Atual com Botões -->
+    <div class="flex justify-center mt-10 items-center gap-4">
+        <!-- Botão Anterior -->
+        <button class="px-3 py-1 !text-black bg-cyan-100 text-white rounded-full shadow-md">←</button>
+
+        <!-- Número da Página -->
+        <div class="flex justify-center items-center rounded-full bg-cyan-100 w-10 h-10">
+            <p class="text-md font-semibold">1</p>
+        </div>
+
+        <!-- Botão Próximo -->
+        <button class="px-3 py-1 !text-black bg-cyan-100 text-white rounded-full shadow-md">→</button>
+    </div>
+
+</div>
+
+
+    </div>
+
+<div class="w-full hover:h-full overflow-hidden border-t-2 border-cyan-500">
+    <iframe class="w-full h-80"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2990.4682051750706!2d-8.263505387931325!3d41.45075939194167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24ef95abeedf75%3A0xdda51c2cf3f1dec7!2sContima%20-%20consultoria%20fiscal%2C%20Unipessoal%20Lda.!5e0!3m2!1spt-PT!2spt!4v1721512370784!5m2!1spt-PT!2spt"
+            style="border:0; outline:none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameBorder="0">
+    </iframe>
+</div>
+
+    <footer class="bottom-0 left-0 w-full py-8 px-6 flex justify-between bg-gray-800">
+        <div class="w-2/3 pr-10"> <!-- vai ocupar 2/3 do footer-->
+            <h3 class="mb-1 font-semibold text-gray-400">Sobre nós</h3>
+            <p class="text-lg- text-gray-500"> Página oficial da Contima LDA </p>
+        </div>
+
+        <div class="w-1/3">
+            <h3 class="mb-1 text-lg font-semibold text-gray-400">Menu</h3>
+            <ul class="space-y-2">
+                <li><a href="#" class="text-md text-cyan-700 hover:text-cyan-800">Contactos</a></li>
+                <li><a href="#" class="text-md text-cyan-700 hover:text-cyan-800">Localização</a></li>
+                <li><a href="#" class="text-md text-cyan-700 hover:text-cyan-800">Política de Privacidade</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
