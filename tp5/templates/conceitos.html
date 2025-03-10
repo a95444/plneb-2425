@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<title>{{title}}</title>
+{% endblock %}
+
+
+{% block body %}
+
+
+<ul>
+    {% for designacao in designacoes %}
+        <li>
+            <a href="{{ url_for('api_conceito_designacao', designacao=designacao) }}">
+                {{designacao}}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
