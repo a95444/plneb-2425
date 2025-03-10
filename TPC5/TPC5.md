@@ -23,8 +23,14 @@ Cada designação na página `conceitos.html` é exibida como um link clicável 
 Aqui, `url_for('api_conceito_designacao', designacao=designacao)` gera a URL correta para a rota que apresenta a descrição do conceito selecionado.
 
 ## Rota Descrição de um Conceito
-A segunda rota permite visualizar a descrição de um conceito específico. Quando um utilizador clica num dos links gerados na página `conceitos.html`, é redirecionado para esta rota, que renderiza a página `conceito_descricao.html`. Esta página exibe a designação e a descrição do conceito correspondente.
+A segunda rota permite visualizar a descrição de um conceito específico. Quando um utilizador clica num dos links gerados na página `conceitos.html`, é redirecionado para esta rota, que renderiza a página `conceito_descricao.html`. Esta página exibe a designação e a descrição do conceito correspondente. Para isso foi criado o seguinte:
 
+```python
+@app.route('/conceitos/<designacao>')
+def api_conceito_designacao(designacao):
+    return render_template("conceito_descricao.html", designacao=designacao, descricao=db[designacao], title="Conceito e desginação")
+
+```
 ## Template `conceito_descricao.html`
 Foi necessário criar a página `conceito_descricao.html` para apresentar os detalhes do conceito selecionado. Esta página recebe a designação e a descrição do conceito e exibe-as num formato organizado.
 
