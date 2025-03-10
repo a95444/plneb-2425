@@ -1,7 +1,7 @@
-# Documentação das Rotas de Conceitos
+# TPC5 - André Sousa - PG52564
 
 ## Introdução
-Foram implementadas duas rotas para manipulação e exibição de conceitos armazenados numa base de dados JSON. Estas rotas permitem listar todas as designações disponíveis e exibir a descrição detalhada de um conceito específico.
+Foram implementadas duas rotas para a exibição de conceitos armazenados numa base de dados JSON. Estas rotas permitem listar todas as designações disponíveis e exibir a descrição detalhada de um conceito específico.
 
 ## Rota Listagem de Conceitos
 Esta rota permite listar todas as designações de conceitos armazenados na base de dados e apresenta-las na página `conceitos.html`.
