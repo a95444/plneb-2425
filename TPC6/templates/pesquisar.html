@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<title>{{ title }}</title>
+{% endblock %}
+
+{% block body %}
+
+
+<div class="container mt-4">
+    <h2 class="mb-3">Pesquisar Conceitos</h2>
+
+    <form method="POST" class="mb-4">
+        <div class="input-group">
+            <input type="text" name="termo" class="form-control" placeholder="Insira o termo a procurar..." required>
+            <button type="submit" class="btn btn-primary">Pesquisar</button>
+        </div>
+        <div class="form-check mt-2">
+            <input class="form-check-input" type="checkbox" name="exact_match" id="exact_match"
+                {% if request.form.get('exact_match') %}checked{% endif %}>
+            <label class="form-check-label" for="exact_match">Pesquisa Exata</label>
+        </div>
+    </form>
+
+    {% if resultados %}
+    <div class="card p-3">
+        <h4>Resultados da procura de: "{{termo}}"</h4>
+        <ul class="list-group">
+            {% for resultado in resultados %}
+                <li class="list-group-item">{{ resultado | safe }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% elif request.method == 'POST' %}
+        <p class="text-muted">Nenhum resultado encontrado.</p>
+    {% endif %}
+</div>
+
+
+
+{% endblock %}
