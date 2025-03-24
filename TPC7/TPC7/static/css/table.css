@@ -1,0 +1,42 @@
+/* Alterar a cor de fundo dos cabeçalhos da tabela */
+table.dataTable thead th {
+    background-color: #343a40;  /* fundo escuro */
+    color: #fff;                /* texto branco */
+    font-size: 1.1rem;
+}
+
+/* Customizar as linhas da tabela */
+table.dataTable tbody tr:nth-child(odd) {
+    background-color: #f8f9fa;
+}
+table.dataTable tbody tr:nth-child(even) {
+    background-color: #e9ecef;
+}
+
+/* Destacar a linha ao passar o mouse */
+table.dataTable tbody tr:hover {
+    background-color: #ced4da;
+}
+
+/* Estilizar os botões de paginação */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    background-color: #343a40;
+    color: #fff !important;
+    border-radius: 0.25rem;
+    margin: 0 0.2rem;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background-color: #007bff;
+}
+
+/* Centraliza a barra de pesquisa */
+.dataTables_filter {
+    text-align: center !important;
+    margin-bottom: 10px;
+}
+
+/* Posiciona a paginação no canto inferior direito */
+.dataTables_paginate {
+    text-align: right !important;
+    margin-top: 10px;
+}

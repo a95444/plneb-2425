@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<title>{{title}}</title>
+{% endblock %}
+
+
+{% block body %}
+
+
+<form class="m-5" action="/conceitos" method="POST">
+  <div class="mb-3">
+    <label for="designacao_input" class="form-label">Designação</label>
+    <input type="text" class="form-control" id="designacao_input" name="designacao">
+  </div>
+  <div class="mb-3">
+    <label for="descricao_input" class="form-label">Descrição</label>
+    <input type="text" class="form-control" id="descricao_input" name="descricao">
+  </div>
+  <button type="submit" class="btn btn-primary ml-3">Submit</button>
+</form>
+
+
+<div class="list-group mt-5">
+    <ul>
+        {% for designacao in designacoes %}
+
+                <a href="{{ url_for('api_conceito_designacao', designacao=designacao)}}" class='list-group-item list-group-item-action'>
+                    {{designacao}}
+                </a>
+
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
