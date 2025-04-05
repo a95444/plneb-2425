@@ -1,19 +1,11 @@
 # TPC8 - PG52564
 
-## Objetivos Gerais
-
-- **Automatizar a coleta de dados:** Acessar a página principal do Atlas da Saúde, identificar as letras que agrupam os termos e, para cada letra, extrair os termos e suas informações detalhadas.
-- **Organizar e estruturar os dados:** Para cada termo, coletar dados como resumo, informações clínicas, causas, sintomas, diagnóstico, tratamento, artigos relacionados, notas e site.
-- **Armazenar os dados:** Salvar os dados extraídos em um ficheiro JSON, facilitando o acesso e a utilização em outras aplicações.
-
----
-
 ## Funções Principais
 
 ### 1. `adquirir_letras()`
 **Objetivo:**  
 - Varredura da página principal para identificar todos os elementos que contêm as letras do alfabeto, representando a categorização dos termos.
-- Para cada letra encontrada, invoca a função `extrair_desc_desig(letra)`, que processa os termos associados àquela letra.
+- Para cada letra encontrada, invoca a função `extrair_desc_desig(letra)`, que processa os termos associados aquela letra.
 
 **Resumo do Funcionamento:**  
 - A função percorre os elementos com a classe `views-summary views-summary-unformatted`.
