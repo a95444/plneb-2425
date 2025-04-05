@@ -1,8 +1,4 @@
-# Extração de Conteúdo do Atlas da Saúde
-
-Este documento descreve detalhadamente o processo de extração do conteúdo presente na página web de cada termo (doença) a processar, utilizando Python com as bibliotecas **requests** e **BeautifulSoup**. O objetivo é organizar as informações extraídas em um dicionário e, posteriormente, armazená-las em um ficheiro JSON.
-
----
+# TPC8 - PG52564
 
 ## Objetivos Gerais
 
