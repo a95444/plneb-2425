@@ -71,9 +71,9 @@ model.wv.most_similar(positive=['harry','bruxo'], negative=['trouxa'])
 
 Outro exemplo:
 ```python
-analogy('bruxo', 'menina', 'trouxa')
+analogy('bruxo', 'menina', 'menino')
 ```
-- **Objetivo:** Encontrar o equivalente a “menina” no universo dos bruxos, partindo da relação _trouxa × bruxo_.
+- **Objetivo:** Encontrar o equivalente a “menina” no universo dos bruxos, partindo da relação  bruxo_ - menino_.
 
 ---
 
@@ -81,6 +81,9 @@ analogy('bruxo', 'menina', 'trouxa')
 
 - Selecionámos um conjunto de palavras-chave (e.g. `["harry","hermione","voldemort","trouxa","bruxo","muggle"]`) e projetámo-las em 2D usando t-SNE.
 - **Objetivo:** Inspecionar visualmente se termos mágicos se agrupam separadamente de “trouxa”/“muggle” e observar clusterização de personagens.
+
+- - Selecionámos um novo conjunto de palavras-chave `['harry', 'rony', 'hermione', 'hagrid', 'neville', 'potter', 'granger', 'weasley', 'percy', 'malfoy', 'draco', 'dumbledore','varinha', 'pedra','madeira', 'porta','medo', 'triste', 'feliz', 'alegremente']` e projetámo-las em 2D usando t-SNE.
+- **Objetivo:** Inspecionar visualmente se pessoas, objetos e sentimenos se agrupam separadamente.
 
 ---
 
