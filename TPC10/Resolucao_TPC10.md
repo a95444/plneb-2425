@@ -1,10 +1,4 @@
-Here’s a **Markdown** summary of the Word2Vec exercise on _Harry Potter e a Pedra Filosofal_, including what was done, which tests were run, their (typical) outputs and a brief critical analysis.
-
----
-
-# Word2Vec em “Harry Potter e a Pedra Filosofal”
-
-Este documento descreve o pipeline completo — desde o pré-processamento do texto até aos testes de similaridade e analogia — e explica o propósito de cada etapa e de cada teste.
+# TPC10 - PG52564
 
 ## 1. Pré-processamento
 
@@ -126,8 +120,3 @@ analogy('bruxo', 'menina', 'menino')
 
 4. **Incremental Training**  
    Útil para experimentar novo texto (por ex., continuação dos livros), mas é crucial normalizar e limpar bem o material adicional.
-
----
-
-> **Conclusão:**  
-> Com processamento simples e Word2Vec, conseguimos capturar de forma consistente muitos aspectos semânticos e relacionais do universo de Harry Potter. No entanto, ajustes de parâmetros e ampliação do corpus são necessários para melhorar analogias mais complexas e incluir nomes menos frequentes.
